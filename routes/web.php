@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\PageController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,4 +25,7 @@ Route::get('/books/{id}/edit', [BookController::class, 'edit'])->name('books.edi
 // Update buku
 Route::put('/books/{id}', [BookController::class, 'update'])->name('books.update');
 
-
+// Halaman statis
+Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
+Route::get('/kategori', [PageController::class, 'kategori'])->name('kategori');
+Route::get('/tentang', [PageController::class, 'tentang'])->name('tentang');
